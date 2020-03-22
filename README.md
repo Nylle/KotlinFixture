@@ -3,11 +3,10 @@
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 # KotlinFixture
-[JavaFixture](https://github.com/Nylle/JavaFixture) is the attempt to bring the incredibly easy usage of [Mark Seemann's AutoFixture for .NET](https://github.com/AutoFixture/AutoFixture) to Java.
+KotlinFixture is a wrapper for [JavaFixture](https://github.com/Nylle/JavaFixture), an attempt to bring the incredibly easy usage of [Mark Seemann's AutoFixture for .NET](https://github.com/AutoFixture/AutoFixture) to Java.
 
-The purpose of this project is to generate full object graphs for use in test suites.
+It strives to provide a kotlin-specific API for better integration. The purpose of this project is to generate full object graphs for use in test suites.
 
-**KotlinFixture** is a wrapper for JavaFixture, providing a kotlin-specific API for better integration.
 
 ## Contents
 - [Getting Started](#getting-started)
