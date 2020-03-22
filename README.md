@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Nylle/KotlinFixture.svg?branch=master)](https://travis-ci.org/Nylle/KotlinFixture)
+[![Test](https://github.com/Nylle/KotlinFixture/workflows/Test/badge.svg)](https://github.com/Nylle/KotlinFixture/actions?query=workflow%3ATest)
 [![Maven Central](https://img.shields.io/maven-central/v/com.github.nylle/kotlinfixture.svg?label=maven-central)](http://search.maven.org/#artifactdetails|com.github.nylle|kotlinfixture|1.0.0|)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 
