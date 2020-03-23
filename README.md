@@ -20,6 +20,7 @@ It strives to provide a kotlin-specific API for better integration. The purpose 
 
 ## Getting Started
 **Heads up!** Due to a [bug in dokka](https://github.com/Kotlin/dokka/issues/294) it is currently impossible to release to maven-central.
+<!--
 ```xml
 <dependency>
     <groupId>com.github.nylle</groupId>
@@ -28,6 +29,7 @@ It strives to provide a kotlin-specific API for better integration. The purpose 
     <scope>test</scope>
 </dependency>
 ```
+-->
 ## Usage
 
 ### Create a Fixture
