@@ -1,9 +1,14 @@
 package com.github.nylle.kotlinfixture
 
+import com.github.nylle.javafixture.Configuration
+import com.github.nylle.javafixture.SpecimenType
+import com.github.nylle.javafixture.annotations.fixture.TestWithFixture
 import com.github.nylle.kotlinfixture.testobjects.TestObjectGeneric
 import com.github.nylle.kotlinfixture.testobjects.TestObjectWithGenericConstructor
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import java.time.Clock
+import java.time.Instant
 import java.util.Optional
 
 
@@ -80,5 +85,20 @@ class FixtureTest {
         assertThat(result).isInstanceOf(SpecimenBuilder::class.java)
         assertThat(result.create()).isInstanceOf(String::class.java)
         assertThat(result.create()).isNotBlank()
+    }
+
+    @Test
+    fun canBeFullyConfigured() {
+        val result = Fixture()
+                .usePositiveNumbersOnly(true)
+                .collectionSizeRange(11, 11)
+                .clock(Clock.systemUTC())
+                .streamSize(1)
+                .createMany<java.util.ArrayList<Int>>()
+                .toList()
+
+        assertThat(result).hasSize(1)
+        assertThat(result[0]).hasSize(11)
+        assertThat(result[0]).allMatch { x -> x > -1 }
     }
 }
