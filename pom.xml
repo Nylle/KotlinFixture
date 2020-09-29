@@ -7,7 +7,7 @@
     <groupId>com.github.nylle</groupId>
     <artifactId>kotlinfixture</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
 
     <name>KotlinFixture</name>
     <url>https://github.com/Nylle/KotlinFixture</url>
@@ -131,10 +131,19 @@
                             <execution>
                                 <phase>pre-site</phase>
                                 <goals>
-                                    <goal>dokka:javadocJar</goal>
+                                    <goal>dokka</goal>
                                 </goals>
                             </execution>
                         </executions>
+                        <configuration>
+                            <dokkaPlugins>
+                                <plugin>
+                                    <groupId>org.jetbrains.dokka</groupId>
+                                    <artifactId>kotlin-as-java-plugin</artifactId>
+                                    <version>1.4.10</version>
+                                </plugin>
+                            </dokkaPlugins>
+                        </configuration>
                     </plugin>
 
                     <!-- GPG plugin -->
