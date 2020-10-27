@@ -7,7 +7,7 @@
     <groupId>com.github.nylle</groupId>
     <artifactId>kotlinfixture</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
 
     <name>KotlinFixture</name>
     <url>https://github.com/Nylle/KotlinFixture</url>
@@ -127,14 +127,6 @@
                         <groupId>org.jetbrains.dokka</groupId>
                         <artifactId>dokka-maven-plugin</artifactId>
                         <version>1.4.10</version>
-                        <executions>
-                            <execution>
-                                <phase>pre-site</phase>
-                                <goals>
-                                    <goal>dokka</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                         <configuration>
                             <dokkaPlugins>
                                 <plugin>

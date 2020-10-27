@@ -16,8 +16,10 @@ jobs:
           java-version: 11
 
       - name: Release Maven package
-        uses: samuelmeuli/action-maven-publish@v1
+        uses: samuelmeuli/action-maven-publish@v1.4.0
         with:
+          maven_profiles: deploy
+          maven_goals_phases: clean dokka:javadocJar deploy
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
           nexus_username: ${{ secrets.SONATYPE_USERNAME }}
