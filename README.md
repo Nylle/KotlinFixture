@@ -1,5 +1,5 @@
 [![Test](https://github.com/Nylle/KotlinFixture/workflows/Test/badge.svg)](https://github.com/Nylle/KotlinFixture/actions?query=workflow%3A"Maven+Verify")
-[![Maven Central](https://img.shields.io/maven-central/v/com.github.nylle/kotlinfixture.svg?label=maven-central)](http://search.maven.org/#artifactdetails|com.github.nylle|kotlinfixture|1.0.0|)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.nylle/kotlinfixture.svg?label=maven-central)](https://maven-badges.herokuapp.com/maven-central/com.github.nylle/kotlinfixture)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 # KotlinFixture
@@ -19,17 +19,14 @@ It strives to provide a kotlin-specific API for better integration. The purpose 
 
 
 ## Getting Started
-**Heads up!** Due to a [bug in dokka](https://github.com/Kotlin/dokka/issues/294) it is currently impossible to release to maven-central.
-<!--
 ```xml
 <dependency>
     <groupId>com.github.nylle</groupId>
     <artifactId>kotlinfixture</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.5</version>
     <scope>test</scope>
 </dependency>
 ```
--->
 ## Usage
 
 ### Create a Fixture
