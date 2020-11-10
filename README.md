@@ -23,7 +23,7 @@ It strives to provide a kotlin-specific API for better integration. The purpose 
 <dependency>
     <groupId>com.github.nylle</groupId>
     <artifactId>kotlinfixture</artifactId>
-    <version>0.0.5</version>
+    <version>0.1.0</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -105,6 +105,22 @@ val result = fixture.build<TestDto>()
 TestDto:
 - myPrivateField: String: "HELLO!"
 - myPublicField: int: 26123854
+
+### Set All Fields For Type
+```kotlin
+val result = fixture.build<ParentDto>()
+                    .with<String>("HELLO!")
+                    .create()
+```
+#### Sample Result
+- ParentDto:
+    - id: String: "HELLO!"
+    - child: ChildDto:
+        - id: String: "HELLO!"
+        - names: ArrayList:
+            - String: "HELLO!"
+            - String: "HELLO!"
+            - String: "HELLO!"
 
 ### Omit Field
 ```kotlin

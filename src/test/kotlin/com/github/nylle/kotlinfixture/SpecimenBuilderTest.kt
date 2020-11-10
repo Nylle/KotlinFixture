@@ -48,7 +48,7 @@ class SpecimenBuilderTest {
 
     @Test
     fun withConsumer() {
-        val sut = SpecimenBuilder(com.github.nylle.javafixture.SpecimenBuilder<TestObjectGeneric<String, Optional<Int>>>(object : SpecimenType<TestObjectGeneric<String, Optional<Int>>>(){}, configure()))
+        val sut = SpecimenBuilder(com.github.nylle.javafixture.SpecimenBuilder(object : SpecimenType<TestObjectGeneric<String, Optional<Int>>>(){}, configure()))
 
         val result = sut.with { it.string = "bar"}.create()
 
@@ -58,7 +58,7 @@ class SpecimenBuilderTest {
 
     @Test
     fun withField() {
-        val sut = SpecimenBuilder(com.github.nylle.javafixture.SpecimenBuilder<TestObjectGeneric<String, Optional<Int>>>(object : SpecimenType<TestObjectGeneric<String, Optional<Int>>>(){}, configure()))
+        val sut = SpecimenBuilder(com.github.nylle.javafixture.SpecimenBuilder(object : SpecimenType<TestObjectGeneric<String, Optional<Int>>>(){}, configure()))
 
         val result = sut
                 .with("t", "foo")
@@ -72,8 +72,21 @@ class SpecimenBuilderTest {
     }
 
     @Test
+    fun withType() {
+        val sut = SpecimenBuilder(com.github.nylle.javafixture.SpecimenBuilder(object : SpecimenType<TestObjectGeneric<String, Optional<Int>>>(){}, configure()))
+
+        val result = sut
+                .with<Int>(111111)
+                .create()
+
+        assertThat(result).isInstanceOf(TestObjectGeneric::class.java)
+        assertThat(result.u).isPresent
+        assertThat(result.u.get()).isEqualTo(111111)
+    }
+
+    @Test
     fun without() {
-        val sut = SpecimenBuilder(com.github.nylle.javafixture.SpecimenBuilder<TestObjectGeneric<String, Optional<Int>>>(object : SpecimenType<TestObjectGeneric<String, Optional<Int>>>(){}, configure()))
+        val sut = SpecimenBuilder(com.github.nylle.javafixture.SpecimenBuilder(object : SpecimenType<TestObjectGeneric<String, Optional<Int>>>(){}, configure()))
 
         val result = sut.without("t").create()
 
