@@ -234,3 +234,14 @@ fun `inject parameter via method extension`(testObject: TestDto, intValue: int, 
     assertThat(genericObject.get()).isInstanceOf(String::class.java)
 }
 ```
+You can also configure Fixture inline:
+```kotlin
+@TestWithFixture(minCollectionSize = 11, maxCollectionSize = 11, positiveNumbersOnly = true)
+fun `inject parameter via method extension and configure the fixture`(testObject: TestObjectGeneric<String, ArrayList<Int>>) {
+    assertThat(testObject).isInstanceOf(TestObjectGeneric::class.java)
+    assertThat(testObject.t).isInstanceOf(String::class.java)
+    assertThat(testObject.u).isInstanceOf(ArrayList::class.java)
+    assertThat(testObject.u).hasSize(11)
+    assertThat(testObject.u).allMatch { it > 0 }
+}
+```

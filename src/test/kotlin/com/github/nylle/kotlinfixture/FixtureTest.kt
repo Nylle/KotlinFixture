@@ -1,14 +1,12 @@
 package com.github.nylle.kotlinfixture
 
-import com.github.nylle.javafixture.Configuration
-import com.github.nylle.javafixture.SpecimenType
 import com.github.nylle.javafixture.annotations.fixture.TestWithFixture
 import com.github.nylle.kotlinfixture.testobjects.TestObjectGeneric
 import com.github.nylle.kotlinfixture.testobjects.TestObjectWithGenericConstructor
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import java.time.Clock
-import java.time.Instant
+import java.util.ArrayList
 import java.util.Optional
 
 
@@ -36,6 +34,15 @@ class FixtureTest {
         assertThat(result.u).isInstanceOf(Optional::class.java)
         assertThat(result.u).isPresent
         assertThat(result.u.get()).isInstanceOf(Integer::class.java)
+    }
+
+    @TestWithFixture(minCollectionSize = 11, maxCollectionSize = 11, positiveNumbersOnly = true)
+    fun create(result: TestObjectGeneric<String, ArrayList<Int>>) {
+        assertThat(result).isInstanceOf(TestObjectGeneric::class.java)
+        assertThat(result.t).isInstanceOf(String::class.java)
+        assertThat(result.u).isInstanceOf(ArrayList::class.java)
+        assertThat(result.u).hasSize(11)
+        assertThat(result.u).allMatch { it > 0 }
     }
 
     @Test
