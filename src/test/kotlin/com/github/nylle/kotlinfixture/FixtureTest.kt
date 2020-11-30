@@ -37,10 +37,10 @@ class FixtureTest {
     }
 
     @TestWithFixture(minCollectionSize = 11, maxCollectionSize = 11, positiveNumbersOnly = true)
-    fun create(result: TestObjectGeneric<String, ArrayList<Int>>) {
+    fun create(result: TestObjectGeneric<String, List<Int>>) {
         assertThat(result).isInstanceOf(TestObjectGeneric::class.java)
         assertThat(result.t).isInstanceOf(String::class.java)
-        assertThat(result.u).isInstanceOf(ArrayList::class.java)
+        assertThat(result.u).isInstanceOf(List::class.java)
         assertThat(result.u).hasSize(11)
         assertThat(result.u).allMatch { it > 0 }
     }
@@ -101,7 +101,7 @@ class FixtureTest {
                 .collectionSizeRange(11, 11)
                 .clock(Clock.systemUTC())
                 .streamSize(1)
-                .createMany<java.util.ArrayList<Int>>()
+                .createMany<List<Int>>()
                 .toList()
 
         assertThat(result).hasSize(1)
