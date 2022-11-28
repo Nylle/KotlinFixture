@@ -73,15 +73,14 @@ class SpecimenBuilderTest {
 
     @Test
     fun withType() {
-        val sut = SpecimenBuilder(com.github.nylle.javafixture.SpecimenBuilder(object : SpecimenType<TestObjectGeneric<String, Optional<Int>>>(){}, configure()))
+        val sut = SpecimenBuilder(com.github.nylle.javafixture.SpecimenBuilder(object : SpecimenType<TestObjectGeneric<String, Int>>(){}, configure()))
 
         val result = sut
                 .with<Int>(111111)
                 .create()
 
         assertThat(result).isInstanceOf(TestObjectGeneric::class.java)
-        assertThat(result.u).isPresent
-        assertThat(result.u.get()).isEqualTo(111111)
+        assertThat(result.u).isEqualTo(111111)
     }
 
     @Test
