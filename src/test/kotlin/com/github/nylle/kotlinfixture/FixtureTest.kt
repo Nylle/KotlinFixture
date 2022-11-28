@@ -6,7 +6,6 @@ import com.github.nylle.kotlinfixture.testobjects.TestObjectWithGenericConstruct
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import java.time.Clock
-import java.util.ArrayList
 import java.util.Optional
 
 
@@ -18,10 +17,8 @@ class FixtureTest {
 
         assertThat(result).isInstanceOf(TestObjectWithGenericConstructor::class.java)
         assertThat(result.value).isInstanceOf(String::class.java)
-        assertThat(result.value).isNotBlank()
+        assertThat(result.value).isNotBlank
         assertThat(result.integer).isInstanceOf(Optional::class.java)
-        assertThat(result.integer).isPresent
-        assertThat(result.integer.get()).isInstanceOf(Integer::class.java)
         assertThat(result.privateField).isNull()
     }
 
@@ -32,8 +29,6 @@ class FixtureTest {
         assertThat(result).isInstanceOf(TestObjectGeneric::class.java)
         assertThat(result.t).isInstanceOf(String::class.java)
         assertThat(result.u).isInstanceOf(Optional::class.java)
-        assertThat(result.u).isPresent
-        assertThat(result.u.get()).isInstanceOf(Integer::class.java)
     }
 
     @TestWithFixture(minCollectionSize = 11, maxCollectionSize = 11, positiveNumbersOnly = true)
@@ -57,8 +52,6 @@ class FixtureTest {
         assertThat(result).isInstanceOf(TestObjectGeneric::class.java)
         assertThat(result.t).isInstanceOf(String::class.java)
         assertThat(result.u).isInstanceOf(Optional::class.java)
-        assertThat(result.u).isPresent()
-        assertThat(result.u.get()).isInstanceOf(Integer::class.java)
     }
 
     @Test
