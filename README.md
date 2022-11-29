@@ -23,7 +23,7 @@ It strives to provide a kotlin-specific API for better integration. The purpose 
 <dependency>
     <groupId>com.github.nylle</groupId>
     <artifactId>kotlinfixture</artifactId>
-    <version>0.2.0</version>
+    <version>0.3.0</version>
     <scope>test</scope>
 </dependency>
 ```
