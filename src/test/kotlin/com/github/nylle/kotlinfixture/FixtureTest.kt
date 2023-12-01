@@ -1,6 +1,8 @@
 package com.github.nylle.kotlinfixture
 
 import com.github.nylle.javafixture.annotations.fixture.TestWithFixture
+import com.github.nylle.javafixture.annotations.testcases.TestCase
+import com.github.nylle.javafixture.annotations.testcases.TestWithCases
 import com.github.nylle.kotlinfixture.testobjects.TestObjectGeneric
 import com.github.nylle.kotlinfixture.testobjects.TestObjectWithGenericConstructor
 import org.assertj.core.api.Assertions.assertThat
@@ -100,5 +102,12 @@ class FixtureTest {
         assertThat(result).hasSize(1)
         assertThat(result[0]).hasSize(11)
         assertThat(result[0]).allMatch { x -> x > -1 }
+    }
+
+    @TestWithCases
+    @TestCase(str1 = "abc", str2 = "cba")
+    @TestCase(str1 = "", str2 = "")
+    fun `repeating annotations are supported`(param1: String, param2: String) {
+        assertThat(param1.reversed()).isEqualTo(param2)
     }
 }
