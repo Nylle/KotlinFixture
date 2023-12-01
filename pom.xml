@@ -7,7 +7,7 @@
     <groupId>com.github.nylle</groupId>
     <artifactId>kotlinfixture</artifactId>
     <packaging>jar</packaging>
-    <version>0.4.0</version>
+    <version>0.4.1</version>
 
     <name>KotlinFixture</name>
     <url>https://github.com/Nylle/KotlinFixture</url>
@@ -126,13 +126,13 @@
                     <plugin>
                         <groupId>org.jetbrains.dokka</groupId>
                         <artifactId>dokka-maven-plugin</artifactId>
-                        <version>1.4.10</version>
+                        <version>1.9.10</version>
                         <configuration>
                             <dokkaPlugins>
                                 <plugin>
                                     <groupId>org.jetbrains.dokka</groupId>
                                     <artifactId>kotlin-as-java-plugin</artifactId>
-                                    <version>1.4.10</version>
+                                    <version>1.9.10</version>
                                 </plugin>
                             </dokkaPlugins>
                         </configuration>
@@ -165,7 +165,7 @@
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.8</version>
+                        <version>1.6.13</version>
                         <extensions>true</extensions>
                         <configuration>
                             <serverId>ossrh</serverId>
